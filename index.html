@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <style>
+
+    body {
+      background-color: rgb(245, 245, 6);
+      color: black;
+      text-align: center;
+      font-size: 4rem;
+    }
+    .input {
+      font-size: 2.5rem;
+      padding: 1.2rem;
+      border: 0.4rem solid black;
+    }
+    #inputOne {
+      font-size: 1rem;
+      padding: 1rem;
+      border: 0.2rem solid blue;
+    }
+    #inputTwo {
+      font-size: 1rem;
+      padding: 1rem;
+      border: 0.2rem solid blue;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.3rem;
+      border: 0.09rem solid blue;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <body>
+    <section>
+      <h2>BASIC CALCULATOR</h2>
+      <div class="input">
+        <input type="number" id="inputOne" placeholder="Enter Value " />
+        <input type="number" id="inputTwo" placeholder="Enter Value " />
+      </div>
+      <div class="buttons">
+        <button id="add" onclick="add()">Add +</button>
+        <button id="Subtract" onclick=" subtract()">Subtract -</button>
+        <button id="Division" onclick="division()">Division /</button>
+        <button id="Multiplication" onclick="multiply()">Multiplication x
+        </button>
+        <!-- <button id="reset" onclick="" >Reset</button> -->
+      </div>
+      <div class="result">
+        <h3>Result: <span id="result">0</span></h3>
+      </div>
+    </section>
+
+    <script>
+      //step 01 - select all the selectors
+
+      const inputOne = document.getElementById("inputOne");
+      const inputTwo = document.getElementById("inputTwo");
+      const result = document.getElementById("result");
+
+      //step 02 - take two input value and find the sum of two values
+
+      // console.log(add);
+      //Add Function
+      function add() {
+        if (inputOne.value && inputTwo.value) {
+          let add = parseInt(inputOne.value) + parseInt(inputTwo.value);
+          result.innerHTML = add;
+          inputOne.value = "";
+          inputTwo.value = "";
+        } else {
+          alert("Please Enter value");
+        }
+      }
+      //Subtract Function
+      function subtract() {
+        if (inputOne.value && inputTwo.value) {
+          let subtract = parseInt(inputOne.value) - parseInt(inputTwo.value);
+          result.innerHTML = subtract;
+          inputOne.value = "";
+          inputTwo.value = "";
+        } else {
+          alert("Please Enter value");
+        }
+        
+      }
+
+      //Division Function
+      function division() {
+        if (inputOne.value && inputTwo.value) {
+          let division = parseInt(inputOne.value) / parseInt(inputTwo.value);
+          result.innerHTML = division.toFixed(1);
+          inputOne.value = "";
+          inputTwo.value = "";
+        } else {
+          alert("Please Enter value");
+        }
+      }
+
+      //Multiply Function
+      function multiply() {
+        if (inputOne.value && inputTwo.value) {
+          let multiply = parseInt(inputOne.value) * parseInt(inputTwo.value);
+          result.innerHTML = multiply;
+          inputOne.value = "";
+          inputTwo.value = "";
+        } else {
+          alert("Please Enter value");
+        }
+      }
+    </script>
+  </body>
+</html>
